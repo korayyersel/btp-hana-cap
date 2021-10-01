@@ -27,6 +27,7 @@ modules:
    requires:
     # Resources extracted from CAP configuration
     - name: hanacap-db
+    - name: hanacap-uaa
    provides:
     - name: srv-api      # required by consumers of CAP services (e.g. approuter)
       properties:
@@ -53,3 +54,10 @@ resources:
    type: com.sap.xs.hdi-container
    properties:
       hdi-container-name: '${service-name}'
+ - name: hanacap-uaa
+   type: org.cloudfoundry.managed-service
+   parameters:
+      service: xsuaa
+      service-plan: application
+      service-name: hanacap-uaa
+      path: ./xs-security.json 

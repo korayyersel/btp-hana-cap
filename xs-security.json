@@ -1,0 +1,21 @@
+{
+  "xsappname": "hanacap",
+  "tenant-mode": "dedicated",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.hanacaprole",
+      "description": "hanacaprole"
+    }
+  ],
+  "attributes": [],
+  "role-templates": [
+    {
+      "name": "hanacaprole",
+      "description": "generated",
+      "scope-references": [
+        "$XSAPPNAME.hanacaprole"
+      ],
+      "attribute-references": []
+    }
+  ]
+}

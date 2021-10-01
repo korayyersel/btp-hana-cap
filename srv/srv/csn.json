@@ -96,8 +96,9 @@
       }
     },
     "CatalogService": {
-      "@source": "srv/interaction_srv.cds",
-      "kind": "service"
+      "@source": "interaction_srv.cds",
+      "kind": "service",
+      "@requires": "hanacaprole"
     },
     "CatalogService.Interactions_Header": {
       "kind": "entity",

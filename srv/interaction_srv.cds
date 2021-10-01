@@ -1,5 +1,6 @@
 using app.interactions from '../db/interactions';
-service CatalogService {
+
+service CatalogService @(requires : 'hanacaprole'){
 
  entity Interactions_Header
 	as projection on interactions.Interactions_Header;
