@@ -21,7 +21,7 @@ modules:
  - name: hanacap-srv
  # ------------------------------------------------------------
    type: nodejs
-   path: gen/srv
+   path: srv
    parameters:
      buildpack: nodejs_buildpack
    requires:
@@ -36,7 +36,7 @@ modules:
  - name: hanacap-db-deployer
  # ------------------------------------------------------------
    type: hdb
-   path: gen/db  
+   path: db  
    parameters:
      buildpack: nodejs_buildpack
    requires:
@@ -51,10 +51,5 @@ resources:
  - name: hanacap-db
 # ------------------------------------------------------------
    type: com.sap.xs.hdi-container
-   parameters:
-     service: hana  # or 'hanatrial' on trial landscapes
-     service-plan: hdi-shared
    properties:
-     hdi-service-name: ${service-name}
-
-
+      hdi-container-name: '${service-name}'
