@@ -1,0 +1,20 @@
+
+@id= sb-hanacap!t3737
+@secret= xxx
+
+@username=koray.yersel@q-perior.com
+@password=xxx
+
+###
+# @name tokenRequest
+POST https://cfdev.authentication.eu10.hana.ondemand.com/oauth/token HTTP/1.1
+content-type: application/x-www-form-urlencoded
+Authorization: Basic {{id}}:{{secret}}
+
+grant_type=password&username={{username}}&password={{password}}&response_type=token
+
+###
+
+GET https://q-perior-ag-dev-hanacap-srv.cfapps.eu10.hana.ondemand.com/catalog/Interactions_Header
+Authorization: Bearer {{tokenRequest.response.body.access_token}}
+####
