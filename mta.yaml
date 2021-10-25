@@ -52,6 +52,9 @@ resources:
  - name: hanacap-db
 # ------------------------------------------------------------
    type: com.sap.xs.hdi-container
+   parameters:
+     service: hana
+     service-plan: hdi-shared
    properties:
       hdi-container-name: '${service-name}'
  - name: hanacap-uaa
